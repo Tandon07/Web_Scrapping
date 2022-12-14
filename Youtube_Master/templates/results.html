@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+<!--      <link rel="stylesheet" href="./style.css">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+<h1 align="center"> Youtube Details </h1>
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header" align="center">Reviews</div>
+
+   <table border="5" bordercolor="#aaa" cellspacing="10" cellpadding="0">
+      <tr>
+<!--         <th>Name</th>-->
+         <th width="5%" style="text-align=center" >S.No</th>
+         <th width="60%">Title</th>
+          <th width="10%" height="20%">Thumbnail</th>
+<!--          <th>Commenter Name</th>-->
+<!--         <th>Comments</th>-->
+<!--         <th width="230">Comments</th>-->
+          <th width="10%">More Info</th>
+          <th width="10%">Download</th>
+<!--          <th>Youtube Page</th>-->
+
+
+
+
+
+      </tr>
+
+
+         {% for review in reviews %}
+
+      <tr height="50px">
+          <td>{{review['S.No']}}</td>
+         <td>{{review['Title']}}</td>
+
+         <td><img  width="100%" height="100%"  src= {{review['Thumbnail']}}</td>
+
+
+          <th><a href={{url_for("moreinfo",lnk=review['Link'])}}>MoreInfo</a></th>
+          <th><a href={{url_for("download",Downlink=review['S.No'])}}> <img width="10%" height="10%" src="https://cdn-icons-png.flaticon.com/512/3917/3917330.png"></a></th>
+
+<!--          <th><a href="www.youtube.com/"+{{review['Link']}}>Youtube Page</a></th>-->
+
+       {% endfor %}
+
+   </table>
+</div>
+<!--            details = {"title": title[i].text, "likes": likes[i].text,-->
+<!--                       'thumbnail': target_folder_image + str(Video_No) + ".jpg",-->
+<!--                        "comments": comments}-->
+
+</body>
+</html>

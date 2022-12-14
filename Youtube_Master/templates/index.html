@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title xmlns:padding-left="http://www.w3.org/1999/xhtml">Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<meta charset="utf-8">
+<h1> Search YouTuber's URL </h1>
+<!--<link rel="stylesheet" href="style.css">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">-->
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+<form action="/details" id ="form" role="search" method="POST">
+            <input type="search" name="content" id="content" placeholder="Search here ..." style="text-align:left">
+            <i class="fa fa-search">
+            </i>
+</form>
+<h3 style="text-align: center">Contact me</h3>
+
+ <div class="self">
+                        <a href="https://github.com/Tandon07"><img width="4%" height="4%" src="https://e7.pngegg.com/pngimages/914/758/png-clipart-computer-icons-logo-github-github-logo-logo-computer-program-thumbnail.png" ></a>
+                        <a href="https://www.linkedin.com/in/tandon-saurabh/"><img width="4%" height="4%" src="https://cdn-icons-png.flaticon.com/512/145/145807.png" style="padding-left: 1.5%;" ></a>
+                        <a href="https://www.instagram.com/tandon_saurabh_/"><img width="4%" height="4%" src="https://spng.subpng.com/20180624/xwz/kisspng-computer-icons-logo-instagram-blog-akita-5b2ffdede302b4.9414355615298718539299.jpg" style="padding-left: 1.5%;"  ></a>
+
+                    </div>
+    </div>
+{% endblock %}

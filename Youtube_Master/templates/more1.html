@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:align="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+<!--      <link rel="stylesheet" href="./style.css">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+
+</head>
+
+<body>
+<!--<table>-->
+<!--      <tr>-->
+<!--      <th>Comments</th>-->
+<!--      </tr>-->
+<!--  {% for comment in htmlComment %}-->
+
+<!--      <tr >-->
+<!--          <td>{{htmlComment['comment']}}</td>-->
+<!--      </tr>-->
+<!--         {% endfor %}-->
+
+<h1 align="center"> More Info☺️ </h1>
+
+<table border="5" bordercolor="#aaa" cellspacing="10" cellpadding="0">
+      <tr>
+<!--         <th>Name</th>-->
+          <th>Title</th>
+         <th>Views</th>
+          <th>Likes</th>
+         <th>Comments</th>
+
+      </tr>
+         {% for info in htmlComment %}
+
+      <tr >
+
+          <td>{{info['Title']}}</td>
+          <td>{{info['Views']}}</td>
+          <td>{{info['Likes']}}</td>
+          <td>
+            <ul>
+                {% for comm in info['Comments'] %}
+                 <li>{{comm['Name']}} : {{comm['Comment']}}</li>
+                {% endfor %}
+            </ul>
+          </td>
+      </tr>
+      {% endfor %}
+
+
+
+</table>
+</body>
+</html>
